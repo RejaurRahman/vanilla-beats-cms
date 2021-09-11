@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  # Frontend
+  vanilla_beats_frontend:
+    restart: unless-stopped
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile
+    ports:
+      - 8000:8000
+    volumes:
+      - ./frontend/src/:/app/src/
+    environment:
+      NODE_ENV: ${ENV_TYPE}
