@@ -1,13 +1,22 @@
 import React from 'react'
-import styles from './Footer.module.scss'
+import * as styles from '@components/Layout/Footer/Footer.module.scss'
 
 const Footer = () => {
   const currentYear = new Date().getFullYear()
 
   return (
     <>
-      <footer>
-        &copy; {currentYear.toString()} - <span>vanilla beats</span>
+      <footer className={styles.footer}>
+        <div className={styles.footer__bg}></div>
+        <div className={styles.component}>
+          <div className={styles.component__container}>
+            <div className={styles.component1}>
+              <p className={`${styles.footer__text} ${styles.textWhite}`}>
+                Copyright &copy; {currentYear.toString()}. Vanilla Beats. All Rights Reserved.
+              </p>
+            </div>
+          </div>
+        </div>
       </footer>
     </>
   )
