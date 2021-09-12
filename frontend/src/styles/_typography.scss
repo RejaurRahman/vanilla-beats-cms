@@ -1,0 +1,63 @@
+.text--white {
+  color: #FFF;
+}
+
+.text--black {
+  color: #333;
+}
+
+.text--red {
+  color: #800517;
+}
+
+.text-uppercase {
+  text-transform: uppercase;
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.text-inherit {
+  text-transform: inherit;
+}
+
+h1 {
+  font: $font-heading-1-mobile;
+  margin: to-rem(0);
+
+  @include breakpoint(min-width, mobile) {
+    @include breakpoint(max-width, tablet) {
+      font: $font-heading-1-tablet;
+    }  
+  }  
+
+  @include breakpoint(min-width, tablet) {
+    font: $font-heading-1-desktop;
+  }
+}
+
+h2 {
+  flex: to-rem(0) to-rem(0) 100%;
+  padding: to-rem(0) to-rem(0) to-rem(30) to-rem(0);
+  margin: to-rem(0);
+  font: $font-heading-2;
+  position: relative;
+
+  @include breakpoint(min-width, tablet) {
+    font: $font-heading-2-desktop;
+  } 
+}
+
+p {
+  font: $font-body-copy;
+  margin: to-rem(0) to-rem(0) to-rem(20) to-rem(0);
+
+  @include breakpoint(min-width, tablet) {
+    font: $font-body-copy-desktop;
+  }
+
+  &:last-child {
+    margin-bottom: to-rem(0);
+  }
+}

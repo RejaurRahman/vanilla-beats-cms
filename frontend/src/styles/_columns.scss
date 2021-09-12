@@ -1,0 +1,135 @@
+.component {
+  position: relative;
+  width: 100%;
+
+  &--spacing {
+    padding: to-rem(50) to-rem(0);
+
+    @include breakpoint(min-width, tablet) {
+      padding: to-rem(100) to-rem(0);
+    }  
+  }
+
+  &__container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: to-rem(0) to-rem(20);
+    margin: to-rem(0) auto;
+    width: auto;
+
+    @include breakpoint(min-width, largeDesktop) {
+      width: calc(100% - 260px);
+    }  
+
+    @include breakpoint(min-width, smallDesktop) {
+      @include breakpoint(max-width, largeDesktop) {
+        width: calc(100% - 180px);
+      }
+    }
+    
+    @include breakpoint(min-width, largeTablet) {
+      @include breakpoint(max-width, smallDesktop) {
+        width: calc(100% - 150px);
+      }
+    }   
+  }
+
+  &--1 {
+    padding: to-rem(0);
+    flex: 100%;
+
+    @include breakpoint(min-width, desktop) {
+      padding: to-rem(0) to-rem(15);
+    }
+
+    @include breakpoint(min-width, tablet) {
+      @include breakpoint(max-width, desktop) {
+        padding: to-rem(0) to-rem(15);
+      }
+    } 
+  }
+
+  &--2 {
+    padding: to-rem(0);
+    flex: 100%;
+
+    @include breakpoint(min-width, desktop) {
+      flex: to-rem(0) to-rem(0) calc(50% - 30px);
+      padding: to-rem(0) to-rem(15);
+    }
+
+    @include breakpoint(min-width, tablet) {
+      @include breakpoint(max-width, desktop) {
+        flex: to-rem(0) to-rem(0) calc(50% - 30px);
+        padding: to-rem(0) to-rem(15);
+      }
+    }
+  }
+
+  &--3 {
+    padding: to-rem(0);
+    flex: 100%;
+
+    @include breakpoint(min-width, desktop) {
+      flex: to-rem(0) to-rem(0) calc(33.33% - 30px);
+      padding: to-rem(0) to-rem(15);
+    }
+
+    @include breakpoint(min-width, tablet) {
+      @include breakpoint(max-width, desktop) {
+        flex: to-rem(0) to-rem(0) calc(50% - 30px);
+        padding: to-rem(0) to-rem(15);
+      }
+    }
+  }
+
+  &--4 {
+    padding: to-rem(0);
+    flex: 100%;
+
+    @include breakpoint(min-width, desktop) {
+      flex: to-rem(0) to-rem(0) calc(25% - 30px);
+      padding: to-rem(0) to-rem(15);
+    } 
+
+    @include breakpoint(min-width, tablet) {
+      @include breakpoint(max-width, desktop) {
+        flex: to-rem(0) to-rem(0) calc(50% - 30px);
+        padding: to-rem(0) to-rem(15);
+      }
+    }    
+  }
+
+  &--5 {
+    padding: to-rem(0);
+    flex: 100%;
+
+    @include breakpoint(min-width, smallDesktop) {
+      flex: to-rem(0) to-rem(0) calc(20% - 30px);
+    }
+
+    @include breakpoint(min-width, desktop) {
+      padding: to-rem(0) to-rem(15);
+    }
+
+    @include breakpoint(min-width, desktop) {
+      @include breakpoint(max-width, smallDesktop) {
+        flex: to-rem(0) to-rem(0) calc(25% - 30px);
+      }
+    }
+
+    @include breakpoint(min-width, tablet) {
+      @include breakpoint(max-width, desktop) {
+        flex: to-rem(0) to-rem(0) calc(33.33% - 30px);
+        padding: to-rem(0) to-rem(15);
+      }
+    } 
+    
+    @include breakpoint(min-width, mobile) {
+      @include breakpoint(max-width, tablet) {
+        flex: to-rem(0) to-rem(0) calc(50% - 30px);
+      }  
+    }  
+  }
+}
+ 

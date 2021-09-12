@@ -1,0 +1,30 @@
+.background-white {
+  background-color: $color-white;
+  color: $color-dune;
+
+  .cta-btn {
+    background-color: $color-firebrick;
+    color: $color-white;
+
+    &:hover {
+      background-color: $color-white;
+      color: $color-firebrick;
+    }
+  }
+}
+
+.background-red {
+  background-color: $color-firebrick;
+  color: $color-white;
+
+  .cta-btn {
+    background-color: $color-white;
+    color: $color-firebrick;
+
+    &:hover {
+      background-color: $color-firebrick;
+      color: $color-white;
+      border: to-rem(1) solid $color-white;
+    }
+  }
+}

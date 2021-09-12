@@ -1,0 +1,60 @@
+/**
+  SCREEN SIZES
+*/
+
+@use 'sass:math';
+
+@mixin breakpoint($breakpoint, $direction) {
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    $breakpoint-value: map-get($breakpoints, $breakpoint);
+
+    @if $direction == max {
+      @media (max-width: ($breakpoint-value - 1)) {
+        @content;
+      }
+    } @else if $direction == min {
+      @media (min-width: $breakpoint-value) {
+        @content;
+      }
+    } @else {
+      @media ($direction: $breakpoint-value) {
+        @content
+      }
+    }
+
+  } @else {
+    @if $direction == max {
+      @media (max-width: $breakpoint) {
+        @content;
+      }
+    } @else if $direction == min {
+      @media (min-width: $breakpoint) {
+        @content;
+      }
+    } @else {
+      @media ($direction: $breakpoint) {
+        @content
+      }
+    }
+  }
+}
+
+/**
+  Helper functions
+*/
+
+// Convert pixels to rem
+@function to-rem($value) {
+  $rem-value: (math.div($value, 16)) + rem;
+  @return $rem-value;
+}
+
+/**
+  Abstract browser prefixes
+*/
+@mixin browser-prefix($name, $value) {
+  @each $attribute in ('-webkit-', '-moz-', '-ms-', '-o-', '') {
+    #{$attribute}#{$name}: #{$value};
+  }
+}
