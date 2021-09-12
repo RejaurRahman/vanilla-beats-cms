@@ -6,9 +6,8 @@ $font-weight-black: 900;
 $font-style-normal: normal;
 
 // base font-family
-$font-family-futura-light: 'Futura Light BT', sans-serif;
-$font-family-futura-heavy: 'Futura Heavy BT', sans-serif;
-$font-family-primary: $font-family-futura-light;
+$font-family-futura: 'Futura', sans-serif;
+$font-family-primary: $font-family-futura;
 
 // base directory with fonts
 $fonts-base: '~/src/fonts';
@@ -17,7 +16,7 @@ $font-futura-black: $fonts-base + '/futura-bt-heavy.woff2';
 
 // base font-face rules
 @font-face {
-  font-family: 'Futura Light BT';
+  font-family: 'Futura';
   src: url($font-futura-light);
   font-weight: $font-weight-light;
   font-style: $font-style-normal;
@@ -25,8 +24,8 @@ $font-futura-black: $fonts-base + '/futura-bt-heavy.woff2';
 }
 
 @font-face {
-  font-family: 'Futura Heavy BT';
-  src: url($font-family-futura-heavy);
+  font-family: 'Futura';
+  src: url($font-futura-black);
   font-weight: $font-weight-black;
   font-style: $font-style-normal;
   font-display: swap;
@@ -34,8 +33,8 @@ $font-futura-black: $fonts-base + '/futura-bt-heavy.woff2';
 
 $font-body-copy: #{$font-weight-light to-rem(16)/to-rem(32) $font-family-primary};
 $font-body-copy-desktop: #{$font-weight-light to-rem(18)/to-rem(32) $font-family-primary};
-$font-heading-1-mobile: #{$font-weight-black to-rem(46.80)/to-rem(46.80) $font-family-futura-heavy};
-$font-heading-1-tablet: #{$font-weight-black to-rem(58)/to-rem(58) $font-family-futura-heavy};
-$font-heading-1-desktop: #{$font-weight-black to-rem(120)/to-rem(120) $font-family-futura-heavy};
+$font-heading-1-mobile: #{$font-weight-black to-rem(46.80)/to-rem(46.80) $font-family-primary};
+$font-heading-1-tablet: #{$font-weight-black to-rem(58)/to-rem(58) $font-family-primary};
+$font-heading-1-desktop: #{$font-weight-black to-rem(120)/to-rem(120) $font-family-primary};
 $font-heading-2-mobile: #{$font-weight-light to-rem(28)/to-rem(34) $font-family-primary};
 $font-heading-2-desktop: #{$font-weight-light to-rem(36)/to-rem(42) $font-family-primary};

@@ -41,7 +41,7 @@ h2 {
   flex: to-rem(0) to-rem(0) 100%;
   padding: to-rem(0) to-rem(0) to-rem(30) to-rem(0);
   margin: to-rem(0);
-  font: $font-heading-2;
+  font: $font-heading-2-mobile;
   position: relative;
 
   @include breakpoint(min-width, tablet) {
