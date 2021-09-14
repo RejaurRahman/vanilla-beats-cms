@@ -1,0 +1,259 @@
+.navigation {
+  display: none;
+  position: relative;
+  z-index: 1;
+  height: to-rem(500);
+  overflow-y: scroll;
+
+  @include breakpoint(min-width, largeTablet) {
+    display: flex;
+    align-items: center;
+  }
+
+  @include breakpoint(min-width, mobile) {
+    height: auto;
+    overflow-y: auto;
+  }  
+
+  &--opened {
+    display: block;
+  }
+
+  &__list {
+    margin: to-rem(0);
+    padding: to-rem(0);
+    list-style: none;
+    display: flex;
+    flex-flow: column;
+
+    @include breakpoint(min-width, largeTablet) {
+      flex-flow: row;
+      height: 100%;
+    }  
+  }
+
+  &__link {
+    @include browser-prefix('transition', 'all 500ms ease');
+    position: relative;
+    font: $font-menu-mobile;
+    display: block;
+    text-decoration: none;
+    color: $color-dune;
+    text-align: center;
+    text-transform: capitalize;
+    padding: to-rem(20) to-rem(14);
+    background-color: $color-white;
+    border-top: to-rem(1) solid $color-silver;
+
+    @include breakpoint(min-width, largeTablet) {
+      font: $font-menu-desktop;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 100%;
+      padding: to-rem(0) to-rem(14);
+      background-color: transparent;
+      border: none;
+    } 
+
+    &:hover {
+      @include breakpoint(min-width, desktop) {
+        color: $color-firebrick;
+      }  
+    }
+    
+    &--active {
+      color: $color-white;
+      background-color: $color-firebrick;
+
+      @include breakpoint(min-width, largeTablet) {
+        color: $color-firebrick;
+        background-color: transparent;
+      }
+
+      .navigation__bars {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+
+  &__overlay {
+    display: none;
+    height: calc(100vh - 50px);
+    width: 100%;
+    position: absolute;
+    top: to-rem(50);
+    background-color: rgba($color-black, .75);
+    cursor: pointer;
+    z-index: -1;
+
+    @include breakpoint(min-width, largeTablet) {
+      display: none;
+    }  
+
+    &--opened {
+      display: block;
+    }
+  }
+
+  &__bars {
+    @include browser-prefix('transition', 'all 500ms ease');
+    @include browser-prefix('transform', 'rotate(270deg)');
+    position: absolute;
+    bottom: to-rem(20);
+    left: to-rem(-10);
+    opacity: 0;
+    visibility: hidden;
+
+    @include breakpoint(min-width, largeTablet) {
+      @include browser-prefix('transform', 'rotate(180deg)');
+      bottom: to-rem(0);
+      left: auto;
+    }  
+
+    &--list {
+      list-style: none;
+      padding: to-rem(0);
+      margin: to-rem(0);
+
+      @include breakpoint(min-width, largeTablet) {
+        background-color: $color-firebrick;
+      }  
+    }
+
+    &--item {
+      float: left;
+      display: block;
+      background-color: $color-white;
+      height: to-rem(35);
+      width: to-rem(2);
+      margin: to-rem(0) to-rem(4);
+
+      &1 {
+        @include browser-prefix('animation', 'musicalBars1 1000ms infinite');
+      }
+
+      &2 {
+        @include browser-prefix('animation', 'musicalBars2 1000ms infinite');
+      }
+
+      &3 {
+        @include browser-prefix('animation', 'musicalBars3 1000ms infinite');
+      }
+
+      &4 {
+        @include browser-prefix('animation', 'musicalBars4 1000ms infinite');
+      }
+
+      &5 {
+        @include browser-prefix('animation', 'musicalBars5 1000ms infinite');
+      }
+    }
+  }
+}
+
+@keyframes musicalBars1 {
+  0% {
+    height: to-rem(25);
+  }
+  20% {
+    height: to-rem(10);
+  }
+  40% {
+    height: to-rem(30);
+  }
+  60% {
+    height: to-rem(25);
+  }
+  80% {
+    height: to-rem(20);
+  }
+  100% {
+    height: to-rem(25);
+  }
+}
+
+@keyframes musicalBars2 {
+  0% {
+    height: to-rem(20);
+  }
+  20% {
+    height: to-rem(10);
+  }
+  40% {
+    height: to-rem(30);
+  }
+  60% {
+    height: to-rem(20);
+  }
+  80% {
+    height: to-rem(30);
+  }
+  100% {
+    height: to-rem(20);
+  }
+}
+
+@keyframes musicalBars3 {
+  0% {
+    height: to-rem(35);
+  }
+  20% {
+    height: to-rem(20);
+  }
+  40% {
+    height: to-rem(25);
+  }
+  60% {
+    height: to-rem(30);
+  }
+  80% {
+    height: to-rem(10);
+  }
+  100% {
+    height: to-rem(35);
+  }
+}
+
+@keyframes musicalBars4 {
+  0% {
+    height: to-rem(10);
+  }
+  20% {
+    height: to-rem(20);
+  }
+  40% {
+    height: to-rem(25);
+  }
+  60% {
+    height: to-rem(10);
+  }
+  80% {
+    height: to-rem(30);
+  }
+  100% {
+    height: to-rem(10);
+  }
+}
+
+@keyframes musicalBars5 {
+  0% {
+    height: to-rem(10);
+  }
+  20% {
+    height: to-rem(25);
+  }
+  40% {
+    height: to-rem(20);
+  }
+  60% {
+    height: to-rem(25);
+  }
+  80% {
+    height: to-rem(20);
+  }
+  100% {
+    height: to-rem(10);
+  }
+}

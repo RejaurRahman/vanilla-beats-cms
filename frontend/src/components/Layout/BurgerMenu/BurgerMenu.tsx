@@ -1,12 +1,10 @@
 import React from 'react'
-import styles from './Burger-Menu.module.scss'
+import * as styles from '@components/Layout/BurgerMenu/Burger-Menu.module.scss'
 
 const BurgerMenu = () => {
   return (
     <>
-      <div>
-        burger menu
-      </div>
+      <div className={styles.hamburger}></div>
     </>
   )
 }

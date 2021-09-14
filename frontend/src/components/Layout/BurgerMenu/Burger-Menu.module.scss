@@ -1,0 +1,50 @@
+.hamburger {
+  display: inline-block;
+  cursor: pointer;
+  width: to-rem(28);
+  height: to-rem(21);
+  border-top: to-rem(3) solid $color-dune;
+  position: relative;
+  margin: to-rem(2) to-rem(0) to-rem(3) to-rem(0);
+
+  @include breakpoint(min-width, largeTablet) {
+    display: none;
+  }  
+
+  &:before,
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: to-rem(3);
+    background-color: $color-dune;
+    position: absolute;
+    left: to-rem(0);
+  }
+
+  &:before {
+    top: to-rem(8);
+  }
+  
+  &:after {
+    bottom: to-rem(0);
+  }
+
+  &.hamburger--opened {
+    border-top: none;
+  }
+}
+
+.header__toggle.header__toggle--opened {
+  border-top: none;
+
+  &:before {
+    @include browser-prefix('rotate', 'rotate(45deg)');
+    top: to-rem(9);
+  }
+
+  &:after {
+    @include browser-prefix('rotate', 'rotate(-45deg)');
+    top: to-rem(9);
+  }
+}
