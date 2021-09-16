@@ -3,7 +3,7 @@ import React, { ReactNode, FC } from 'react'
 import Header from '@components/Layout/Header'
 import Footer from '@components/Layout/Footer'
 
-import styles from './Default.module.scss'
+import * as styles from '@layouts/Default/Default.module.scss'
 
 interface LayoutProps {
   children: ReactNode
@@ -11,11 +11,11 @@ interface LayoutProps {
 
 const Default: FC<LayoutProps> = ({children}) => (
   <>
-    <div>
-      <Header />
-      <main>{children}</main>
-      <Footer />
-    </div>
+    <Header />
+    <main className={styles.layout}>
+      {children}
+    </main>
+    <Footer />
   </>
 )
 
