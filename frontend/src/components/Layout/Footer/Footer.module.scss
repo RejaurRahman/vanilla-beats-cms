@@ -8,7 +8,7 @@
   position: relative;
   margin-top: to-rem(165);
 
-  @include breakpoint(min-width, tablet) {
+  @include respond-above(tablet) {
     font: $font-footer-desktop;
   }  
 

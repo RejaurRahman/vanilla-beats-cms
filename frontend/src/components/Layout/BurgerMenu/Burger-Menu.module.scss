@@ -7,7 +7,7 @@
   position: relative;
   margin: to-rem(2) to-rem(0) to-rem(3) to-rem(0);
 
-  @include breakpoint(min-width, largeTablet) {
+  @include respond-above(largeTablet) {
     display: none;
   }  
 

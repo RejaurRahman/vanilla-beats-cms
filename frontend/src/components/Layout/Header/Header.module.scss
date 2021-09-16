@@ -7,7 +7,7 @@
   border-bottom: to-rem(1) solid $color-firebrick;
   z-index: 2;
 
-  @include breakpoint(min-width, largeTablet) {
+  @include respond-above(largeTablet) {
     height: to-rem(100);
   }  
 
@@ -16,7 +16,7 @@
     justify-content: space-between;
     padding: to-rem(0);
 
-    @include breakpoint(min-width, largeTablet) {
+    @include respond-above(largeTablet) {
       flex-flow: row;
       padding: to-rem(0) to-rem(20);
     }
@@ -29,7 +29,7 @@
     justify-content: space-between;
     padding: to-rem(0) to-rem(20);
 
-    @include breakpoint(min-width, largeTablet) {
+    @include respond-above(largeTablet) {
       height: to-rem(100);
       padding: to-rem(0);
     }

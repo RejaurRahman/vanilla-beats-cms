@@ -4,38 +4,36 @@
 
 @use 'sass:math';
 
-@mixin breakpoint($breakpoint, $direction) {
+// Mixin for media query (min-width: breakpoint)
+@mixin respond-above($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
-
     $breakpoint-value: map-get($breakpoints, $breakpoint);
 
-    @if $direction == max {
-      @media (max-width: ($breakpoint-value - 1)) {
-        @content;
-      }
-    } @else if $direction == min {
-      @media (min-width: $breakpoint-value) {
-        @content;
-      }
-    } @else {
-      @media ($direction: $breakpoint-value) {
-        @content
-      }
+    @media (min-width: $breakpoint-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint: #{$breakpoint}.';
+  }
+}
+
+// Mixin for media query (min-width: breakpoint) and (max-width: breakpoint)
+@mixin respond-between($lower, $upper) {
+  @if map-has-key($breakpoints, $lower) and map-has-key($breakpoints, $upper) {
+    $lower-breakpoint: map-get($breakpoints, $lower);
+    $upper-breakpoint: map-get($breakpoints, $upper);
+
+    @media (min-width: $lower-breakpoint) and (max-width: ($upper-breakpoint - 1)) {
+      @content;
+    }
+  
+  } @else {
+    @if (map-has-key($breakpoints, $lower) == false) {
+      @warn 'Your lower breakpoint was invalid: #{$lower}.';
     }
 
-  } @else {
-    @if $direction == max {
-      @media (max-width: $breakpoint) {
-        @content;
-      }
-    } @else if $direction == min {
-      @media (min-width: $breakpoint) {
-        @content;
-      }
-    } @else {
-      @media ($direction: $breakpoint) {
-        @content
-      }
+    @if (map-has-key($breakpoints, $upper) == false) {
+      @warn 'Your upper breakpoint was invalid: #{$upper}.';
     }
   }
 }

@@ -26,13 +26,11 @@ h1 {
   font: $font-heading-1-mobile;
   margin: to-rem(0);
 
-  @include breakpoint(min-width, mobile) {
-    @include breakpoint(max-width, tablet) {
-      font: $font-heading-1-tablet;
-    }  
+  @include respond-between(mobile, tablet) {
+    font: $font-heading-1-tablet;
   }  
 
-  @include breakpoint(min-width, tablet) {
+  @include respond-above(tablet) {
     font: $font-heading-1-desktop;
   }
 }
@@ -44,7 +42,7 @@ h2 {
   font: $font-heading-2-mobile;
   position: relative;
 
-  @include breakpoint(min-width, tablet) {
+  @include respond-above(tablet) {
     font: $font-heading-2-desktop;
   } 
 }
@@ -53,7 +51,7 @@ p {
   font: $font-body-copy;
   margin: to-rem(0) to-rem(0) to-rem(20) to-rem(0);
 
-  @include breakpoint(min-width, tablet) {
+  @include respond-above(tablet) {
     font: $font-body-copy-desktop;
   }
 

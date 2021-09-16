@@ -5,7 +5,7 @@
   &--spacing {
     padding: to-rem(50) to-rem(0);
 
-    @include breakpoint(min-width, tablet) {
+    @include respond-above(tablet) {
       padding: to-rem(100) to-rem(0);
     }  
   }
@@ -17,20 +17,16 @@
     margin: to-rem(0) auto;
     width: auto;
 
-    @include breakpoint(min-width, largeDesktop) {
+    @include respond-above(largeDesktop) {
       width: calc(100% - 260px);
     }  
 
-    @include breakpoint(min-width, smallDesktop) {
-      @include breakpoint(max-width, largeDesktop) {
-        width: calc(100% - 180px);
-      }
+    @include respond-between(smallDesktop, largeDesktop) {
+      width: calc(100% - 180px);
     }
     
-    @include breakpoint(min-width, largeTablet) {
-      @include breakpoint(max-width, smallDesktop) {
-        width: calc(100% - 150px);
-      }
+    @include respond-between(largeTablet, smallDesktop) {
+      width: calc(100% - 150px);
     }   
   }
 
@@ -38,14 +34,12 @@
     padding: to-rem(0);
     flex: 100%;
 
-    @include breakpoint(min-width, desktop) {
+    @include respond-above(desktop) {
       padding: to-rem(0) to-rem(15);
     }
 
-    @include breakpoint(min-width, tablet) {
-      @include breakpoint(max-width, desktop) {
-        padding: to-rem(0) to-rem(15);
-      }
+    @include respond-between(tablet, desktop) {
+      padding: to-rem(0) to-rem(15);
     } 
   }
 
@@ -53,16 +47,14 @@
     padding: to-rem(0);
     flex: 100%;
 
-    @include breakpoint(min-width, desktop) {
+    @include respond-above(desktop) {
       flex: to-rem(0) to-rem(0) calc(50% - 30px);
       padding: to-rem(0) to-rem(15);
     }
 
-    @include breakpoint(min-width, tablet) {
-      @include breakpoint(max-width, desktop) {
-        flex: to-rem(0) to-rem(0) calc(50% - 30px);
-        padding: to-rem(0) to-rem(15);
-      }
+    @include respond-between(tablet, desktop) {
+      flex: to-rem(0) to-rem(0) calc(50% - 30px);
+      padding: to-rem(0) to-rem(15);
     }
   }
 
@@ -70,16 +62,14 @@
     padding: to-rem(0);
     flex: 100%;
 
-    @include breakpoint(min-width, desktop) {
+    @include respond-above(desktop) {
       flex: to-rem(0) to-rem(0) calc(33.33% - 30px);
       padding: to-rem(0) to-rem(15);
     }
 
-    @include breakpoint(min-width, tablet) {
-      @include breakpoint(max-width, desktop) {
-        flex: to-rem(0) to-rem(0) calc(50% - 30px);
-        padding: to-rem(0) to-rem(15);
-      }
+    @include respond-between(tablet, desktop) {
+      flex: to-rem(0) to-rem(0) calc(50% - 30px);
+      padding: to-rem(0) to-rem(15);
     }
   }
 
@@ -87,16 +77,14 @@
     padding: to-rem(0);
     flex: 100%;
 
-    @include breakpoint(min-width, desktop) {
+    @include respond-above(desktop) {
       flex: to-rem(0) to-rem(0) calc(25% - 30px);
       padding: to-rem(0) to-rem(15);
     } 
 
-    @include breakpoint(min-width, tablet) {
-      @include breakpoint(max-width, desktop) {
-        flex: to-rem(0) to-rem(0) calc(50% - 30px);
-        padding: to-rem(0) to-rem(15);
-      }
+    @include respond-between(tablet, desktop) {
+      flex: to-rem(0) to-rem(0) calc(50% - 30px);
+      padding: to-rem(0) to-rem(15);
     }    
   }
 
@@ -104,31 +92,25 @@
     padding: to-rem(0);
     flex: 100%;
 
-    @include breakpoint(min-width, smallDesktop) {
+    @include respond-above(smallDesktop) {
       flex: to-rem(0) to-rem(0) calc(20% - 30px);
     }
 
-    @include breakpoint(min-width, desktop) {
+    @include respond-above(desktop) {
       padding: to-rem(0) to-rem(15);
     }
 
-    @include breakpoint(min-width, desktop) {
-      @include breakpoint(max-width, smallDesktop) {
-        flex: to-rem(0) to-rem(0) calc(25% - 30px);
-      }
+    @include respond-between(desktop, smallDesktop) {
+      flex: to-rem(0) to-rem(0) calc(25% - 30px);
     }
 
-    @include breakpoint(min-width, tablet) {
-      @include breakpoint(max-width, desktop) {
-        flex: to-rem(0) to-rem(0) calc(33.33% - 30px);
-        padding: to-rem(0) to-rem(15);
-      }
+    @include respond-between(tablet, desktop) {
+      flex: to-rem(0) to-rem(0) calc(33.33% - 30px);
+      padding: to-rem(0) to-rem(15);
     } 
     
-    @include breakpoint(min-width, mobile) {
-      @include breakpoint(max-width, tablet) {
-        flex: to-rem(0) to-rem(0) calc(50% - 30px);
-      }  
+    @include respond-between(mobile, tablet) {
+      flex: to-rem(0) to-rem(0) calc(50% - 30px); 
     }  
   }
 }
